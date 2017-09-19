@@ -1,0 +1,34 @@
+def insertSort(list1, num, i=0):
+    '''
+    objective: to insert an input number in sorted list
+    input : number
+    output: updated sorted list
+    '''
+    #Compare with last element in the list
+    #if greater append
+    #else start with comparing the first index number with the input number
+    #if smaller, insert
+    #else, move forward and compare
+    
+    if num > list1[-1]:
+        return list1.append(num)
+    elif num <= list1[i]:
+        return list1.insert(i, num)
+    else:
+        return insertSort (list1, num, i+1)
+
+def main():
+    '''
+    objective: to insert an input number in sorted list
+    input : number
+    output: updated sorted list
+    '''
+    #approach: Use recursion using function of insertSort
+    
+    list1 = [1,3,7,9,17,21]
+    num = int(input('Enter the number you want to insert: '))
+    insertSort(list1, num, i=0)
+    print ('New sorted list: ', list1)
+   
+if __name__ == '__main__':
+    main()
