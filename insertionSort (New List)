@@ -1,0 +1,42 @@
+def insertSort(sl, num, i=0):
+    '''
+    objective: to insert an input number in sorted list
+    input : number
+    output: updated sorted list
+    '''
+    #Compare with last element in the list
+    #if greater append
+    #else start with comparing the first index number with the input number
+    #if smaller, insert
+    #else, move forward and compare
+    
+    if len(sl) == 0:
+        sl.append(num)
+        return sl
+    elif num > sl[-1]:
+        sl.append(num)
+        return sl
+    elif num <= sl[i]:
+        sl.insert(i, num)
+        return sl
+    else:
+        return insertSort (sl, num, i+1)
+        
+def sortList(sl, ul, i=0):
+    
+    if len(ul) == 0:
+        return sl
+    else:
+        num = ul[i]
+        del ul[0]
+        return sortList(insertSort(sl, num, i=0), ul)
+        
+           
+def main():
+    ul = [5,34,6,76,24,22]
+    sl = []
+    sortList(sl, ul)
+    print (sl)
+
+if __name__ == '__main__':
+    main()
