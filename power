@@ -1,0 +1,21 @@
+def power(a, b):
+    '''
+    '''
+    #recursively add a with a same number time as b
+
+    assert a>0 and b>0
+
+    if b == 1:
+        return a
+    else:
+        return a * power(a, b-1)
+
+def main():
+    a = int(input('a = '))
+    b = int(input('b = '))
+    print(a ,'^', b, ' = ', power(a,b))
+
+
+if __name__ == '__main__':
+    main()
+
