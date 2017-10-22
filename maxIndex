@@ -1,0 +1,16 @@
+def maxIndex(alist, i=0):
+    
+    if len(alist) == i+1:
+        t = i
+        return t
+    elif alist[i] > alist[i+1]:
+        t = i
+        return maxIndex(alist, i+1)
+    else:
+        t = i+1
+        return maxIndex(alist, i+1)
+        
+alist = [1,2,3,4]
+print(alist)
+print(maxIndex(alist))
+        
